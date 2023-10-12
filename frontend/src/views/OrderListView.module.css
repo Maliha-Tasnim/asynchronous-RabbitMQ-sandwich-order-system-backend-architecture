@@ -1,0 +1,4 @@
+.OrderList {
+    display: grid;
+    grid-gap: var(--default-margin);
+}

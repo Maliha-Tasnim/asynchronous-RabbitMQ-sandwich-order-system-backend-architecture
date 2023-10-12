@@ -1,0 +1,28 @@
+.container {
+    background-color: var(--color-ds);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.container > nav {
+    display: flex;
+    width: 100%;
+
+}
+
+.container > nav > button {
+    background: none;
+    border: none;
+    color: var(--color-ls);
+
+    padding: var(--default-padding);
+}
+
+.AdminButton {
+    background-color: var(--color-ls);
+    color: var(--color-ds);
+    font-weight: bold;
+    margin: var(--default-padding);
+}

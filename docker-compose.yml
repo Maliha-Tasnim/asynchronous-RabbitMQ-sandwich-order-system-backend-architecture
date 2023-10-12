@@ -1,0 +1,70 @@
+
+
+version: "3"
+
+services:
+  server-a:
+    container_name: server-a
+    restart: always
+    depends_on:
+      - rabbitmq
+      - mongodb
+    build:
+      dockerfile: Dockerfile
+      context: ./backend/server-a
+    ports:
+      - "8080:8080"
+    environment:
+      WAIT_HOSTS: mongodb:27017, rabbitmq:5672
+      WAIT_AFTER_HOSTS: 5
+    command: sh -c "/wait && node app.js"
+    networks:
+      - backend
+
+  mongodb:
+    container_name: mongodb
+    image: mongo
+    ports:
+      - "27017:27017"
+    networks:
+      - backend
+
+  rabbitmq:
+    image: rabbitmq:3-management-alpine
+    container_name: rabbitmq
+    ports:
+      - "5672:5672"
+      - 15672:15672
+    networks:
+      - backend
+
+  server-b:
+    depends_on:
+      - rabbitmq
+      - server-a
+    command: sh -c "./utils/wait-for-it.sh && npm start"
+    build:
+      dockerfile: Dockerfile
+      context: ./backend/server-b
+    ports:
+      - 8000:8000
+    networks:
+      - backend
+    environment:
+      WAITFORIT_HOST: rabbitmq
+      WAITFORIT_PORT: 5672
+
+  frontend:
+    build:
+      dockerfile: Dockerfile
+      context: ./frontend
+    ports:
+      - 3000:80
+    depends_on:
+      - server-a
+      - server-b
+
+
+networks:
+  backend:
+    driver: bridge

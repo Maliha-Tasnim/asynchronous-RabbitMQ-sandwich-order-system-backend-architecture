@@ -1,0 +1,11 @@
+.Input {
+    display: flex;
+    flex-direction: column;
+}
+
+.Input > input {
+    border: 1px solid black;
+    border-radius: var(--default-border-radius);
+    margin-top: calc(var(--default-padding) / 4);
+    padding: calc(var(--default-padding) / 2);
+}

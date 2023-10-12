@@ -1,0 +1,19 @@
+.SandwichList {
+    --item-count: 1;
+
+    display: grid;
+    grid-template-columns: repeat(var(--item-count), 1fr);
+    grid-gap: var(--default-margin);
+}
+
+@media only screen and (min-width: 768px) {
+    .SandwichList {
+        --item-count: 2;
+    }
+}
+
+@media only screen and (min-width: 1024px) {
+    .SandwichList {
+        --item-count: 3;
+    }
+}

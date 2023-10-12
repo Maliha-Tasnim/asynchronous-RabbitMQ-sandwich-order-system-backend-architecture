@@ -1,0 +1,24 @@
+.container {
+    background-color: var(--color-da);
+    color: var(--color-ls);
+    border-radius: var(--default-border-radius);
+    padding: var(--default-padding);
+
+    position: relative;
+}
+
+.container > h2 {
+    margin: 0;
+}
+
+.OrderButton {
+    position: absolute;
+    top: var(--default-margin);
+    right: var(--default-margin)
+}
+
+.ToppingList {
+    display: flex;
+    justify-content: space-around;
+    list-style-type: none;
+}

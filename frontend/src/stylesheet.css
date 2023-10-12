@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=New+Tegomin&display=swap');
+
+:root {
+    /* Color definitions, generated with http://colormind.io/. */
+    --color-ls: #F7F8F9;
+    --color-la: #81A6A9;
+    --color-main: #B13E3A;
+    --color-da: #B15C6A;
+    --color-ds: #261925;
+    --color-red: #c8390a;
+
+    --main-font: 'New Tegomin', serif;
+
+    /* Paddings, margins etc... */
+    --default-border: 1px solid var(--color-la);
+    --default-border-radius: 1rem;
+    --default-margin: 1rem;
+    --default-padding: 1rem;
+}
+
+body {
+    background-color: var(--color-ls);
+    margin: 0;
+    font-family: var(--main-font);
+}
+
+button {
+    font-size: 1rem;
+    font-family: var(--main-font);
+}
+
+button:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+form {
+    border: 1px solid var(--color-la);
+    border-radius: var(--default-border-radius);
+    display: grid;
+    grid-row-gap: 1rem;
+
+    padding: var(--default-padding);
+}
+
+form > h2 {
+    margin: 0;
+}
+
+input {
+    font-family: var(--main-font);
+}
+
+main {
+    margin: 0 5% 5% 5%;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}

@@ -1,0 +1,23 @@
+.BreadTypeInput {
+    margin-bottom: var(--default-margin);
+}
+
+.BreadTypeInput > * {
+    margin: var(--default-margin);
+}
+
+.ToppingList {
+    list-style: none;
+    margin: var(--default-margin) 0;
+}
+
+.ToppingList > li > input {
+    margin-right: var(--default-margin);
+}
+
+.ToppingList > li > button {
+    background: none;
+    border: none;
+    color: var(--color-da);
+    margin-right: var(--default-margin);
+}
