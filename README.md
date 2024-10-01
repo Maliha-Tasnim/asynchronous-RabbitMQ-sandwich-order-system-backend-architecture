@@ -1,10 +1,8 @@
-## Full-Stack-Food-Ordering-Application
-This is a sandwich ordering application. The system architecture consists of a front-end application, two back-end servers (server A &amp; B), a messaging broker, sandwich API for communication and database to store the data.
-
-
 ## Project Overview
 
-This is a simple sandwich ordering web application. User can order sandwich with the help of frontend. Order is placed and processed in the backend. This project is divided into three main parts for modularity and performance balancing i.e. frontend, server A and server B in the backend. The sandwich order application follows loosely coupled architecture. For asynchronous communication, mediator approach is used. Hence, the communication part is taken care of by RabbitMQ.
+This is a sandwich ordering web application. It is mostly focused on the backend development. In this application, user can order sandwich with the help of frontend. Order is placed and processed in the backend. This project is divided into three main parts for modularity and performance balancing i.e. frontend, server A and server B in the backend. The sandwich order application follows loosely coupled architecture. For asynchronous communication, mediator approach is used. Hence, the communication part is taken care of by RabbitMQ. A high level overview of the project is illustrated below:
+
+
 
 ![High level architecture](High%20level%20architecture.jpg)
 
@@ -72,74 +70,41 @@ The notable summary of technologies are:
 - Axios for API communication
 
 
-The structure of the application is
+The structure of the application is as below:
 
-```
-// contains all components to be used
-components/
-    Component/
-        Component.js
-        Component.module.css
-        Component.test.js
+![1](https://github.com/user-attachments/assets/7402b306-5e99-4e2f-904e-2245471c4ccf)
 
-// event emitters
-events/
-    ContenSwitch.js
-    NotificationEvent.js
 
-// data to use in testing and development without API
-mocks/
 
-// all communication to backend is here
-services/
-    Service.js
-    Service.test.js
-
-// all views "pages"
-views/
-    OrderListView.js
-    OrderListView.module.css
-
-// View name mappings
-routes.js
-
-// Settings of the application and other constants
-settings.js
-```
 
 ### Event Based Architeture
 
 This is an experiment for switching views without Redux and React Contexts, and it uses events to request view changes. The app shell will load the listener for it.
 
-After the listener is up the content is swapped by calling
+After the listener is up, the content is swapped by calling this:
 
-```javascript
-fireContentSwitchEvent(viewName);
-```
 
-The similar architecture is used with showing notifications.
+![image](https://github.com/user-attachments/assets/05b15b8e-96de-4084-9232-9c450d52f1ba)
 
-```javascript
-fireNotificationEvent(text, level);
-```
+
+
+The similar architecture is used with showing notifications:
+
+![image](https://github.com/user-attachments/assets/86a6d597-ab49-4094-b2ae-3bd97b6ab9aa)
+
 
 ### CSS Architecture
 
-The styles follow a style of defining css constants as
+The styles follow a style of defining css constants as below:
 
-```
-:root {
-   --constant-name: value;
-}
-```
+![image](https://github.com/user-attachments/assets/efc02cda-8313-475a-9b67-71d40e69e395)
 
-which forms the global base values to be used anywhere as `var(--constant-name)`. The idea of doing it like this is to allow overriding them and keeping them in one place while scoping the styles.
+
+This forms the global base values to be used anywhere as `var(--constant-name)`. The idea of doing it like this is to allow overriding them and keeping them in one place while scoping the styles.
 
 ### Services
 
 The communication to backend is split to Services that only return the data or a rejects the Promise.
-
-The structure is inspired by Angular, and was seen in Full Stack Open -course.
 
 ### Polling for orders
 
