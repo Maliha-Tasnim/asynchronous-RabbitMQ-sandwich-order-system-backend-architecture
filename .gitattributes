@@ -1,0 +1,5 @@
+*.sh linguist-language=JavaScript
+
+backend\server-a\utils\wait-for-it.js linguist-language=JavaScript
+backend\server-b\utils\wait-for-it.js linguist-language=JavaScript
+
