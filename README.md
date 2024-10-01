@@ -6,11 +6,10 @@ This is a sandwich ordering web application. It is mostly focused on the backend
 
 ![High level architecture](High%20level%20architecture.jpg)
 
-All the parts of the software can be started with
+All the parts of the software can be started with this command:
 
-```bash
-docker-compose up --build
-```
+![image](https://github.com/user-attachments/assets/4ad36ca8-8173-4387-8ef1-78dbf2da1196)
+
 
 The ports exposed are as follows:
 
@@ -47,15 +46,12 @@ For manual testing:
 
 The final build doesn't auto-refresh so in development mode it can be run as
 
-```bash
-cd frontend
-yarn install
-yarn start
-```
+![image](https://github.com/user-attachments/assets/70322fe9-4426-4a5d-9281-3b6b8c96f98e)
+
 
 ### Application Structure
 
-The frontend is React _single-page application. It was created with _Create React App_. It only contains three views
+The frontend is React _single-page application. It was created with _Create React App_. It only contains three views:
 
 - sandwich listing
 - payment confirm
